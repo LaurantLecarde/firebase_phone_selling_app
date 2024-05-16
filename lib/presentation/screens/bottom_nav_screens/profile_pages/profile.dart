@@ -1,14 +1,12 @@
 import 'package:firebase_phone_selling_app/constants/colors.dart';
 import 'package:firebase_phone_selling_app/constants/navigators.dart';
-import 'package:firebase_phone_selling_app/presentation/screens/profile_pages/update_profile.dart';
-import 'package:firebase_phone_selling_app/presentation/widgets/buttons.dart';
+import 'package:firebase_phone_selling_app/presentation/screens/bottom_nav_screens/profile_pages/update_profile.dart';import 'package:firebase_phone_selling_app/presentation/widgets/buttons.dart';
 import 'package:firebase_phone_selling_app/presentation/widgets/const_sizedbox.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../auth_pages/flip_pages.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});

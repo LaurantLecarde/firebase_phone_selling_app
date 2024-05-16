@@ -1,13 +1,13 @@
 import 'package:firebase_phone_selling_app/constants/colors.dart';
-import 'package:firebase_phone_selling_app/constants/navigators.dart';
-import 'package:firebase_phone_selling_app/presentation/screens/profile_pages/profile.dart';
-import 'package:firebase_phone_selling_app/presentation/widgets/buttons.dart';
+import 'package:firebase_phone_selling_app/constants/navigators.dart';import 'package:firebase_phone_selling_app/presentation/widgets/buttons.dart';
 import 'package:firebase_phone_selling_app/presentation/widgets/text_fields/log_reg_textfld.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
+
+import '../../bottom_nav_screens/profile_pages/profile.dart';
 
 class LoginPage extends StatefulWidget {
   final VoidCallback onFlip;
