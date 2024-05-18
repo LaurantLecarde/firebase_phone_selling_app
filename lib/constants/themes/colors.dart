@@ -5,6 +5,7 @@ class AppColors {
 }
 
 mainTheme(context) {
-  final mainTheme = Theme.of(context).primaryColor;
-  return mainTheme;
+  final background = Theme.of(context).colorScheme.surface;
+  return background;
 }
+

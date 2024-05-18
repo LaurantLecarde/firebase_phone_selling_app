@@ -6,7 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:mask_input_formatter/mask_input_formatter.dart';
 
-import '../../../../constants/colors.dart';
+import '../../../../constants/themes/colors.dart';
 import '../../../widgets/buttons.dart';
 import '../../../widgets/text_fields/log_reg_textfld.dart';
 

@@ -1,4 +1,4 @@
-import 'package:firebase_phone_selling_app/constants/colors.dart';
+import 'package:firebase_phone_selling_app/constants/themes/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -25,6 +25,7 @@ class LogRegTextField extends StatelessWidget {
     final double radius = size.width * 0.1;
 
     return TextField(
+      controller: controller,
       cursorColor: Colors.black,
       obscureText: obscure,
       keyboardType: digitsOnly ? TextInputType.number : TextInputType.text,

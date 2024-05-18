@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "637517963177",
+    "project_id": "fir-phonesllingapp",
+    "storage_bucket": "fir-phonesllingapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:637517963177:android:e06bd4f5baec9d93e1eeb8",
+        "android_client_info": {
+          "package_name": "com.sdk.firebase_phone_selling_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCE2k3T_5CoGkh67yzTpNAPTgNp8LFfCxU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

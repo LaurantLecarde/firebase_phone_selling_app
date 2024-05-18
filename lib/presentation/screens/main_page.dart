@@ -1,5 +1,7 @@
+import 'dart:ui';
+
 import 'package:firebase_phone_selling_app/constants/bottom_screens.dart';
-import 'package:firebase_phone_selling_app/constants/colors.dart';
+import 'package:firebase_phone_selling_app/constants/themes/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -12,6 +14,8 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   int _selectedIndex = 0;
+
+  bool _containerTapped1 = false;
 
   _floatNotNeed() {
     if (_selectedIndex == 0 || _selectedIndex == 3) {
@@ -37,6 +41,7 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Scaffold(
         backgroundColor: mainTheme(context),
         body: PageView(
@@ -49,12 +54,12 @@ class _MainPageState extends State<MainPage> {
           children: bottomScreens,
         ),
         bottomNavigationBar: _bottom(),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton:
             _floatNotNeed() ? SizedBox() : _floatingActionButton());
   }
 
   _floatingActionButton() {
+    var size = MediaQuery.of(context).size;
     return FloatingActionButton(
       tooltip: "E'lon Berish",
       backgroundColor: Colors.white,
@@ -69,31 +74,85 @@ class _MainPageState extends State<MainPage> {
     var size = MediaQuery.of(context).size;
     return BottomAppBar(
       elevation: 0,
-      shape: CircularNotchedRectangle(),
+      shape: const CircularNotchedRectangle(),
       notchMargin: 8.0,
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      child: SizedBox(
+        height: size.height / 25,
+        child: ListView(
+          scrollDirection: Axis.horizontal,
+          children: [
+            _bottomItemBuild(
+              condition: _selectedIndex == 0,
+              icon: const Icon(CupertinoIcons.chat_bubble_2),
+              onPressed: () {
+                _animateToPage(0);
+              },
+              name: 'Chat',
+            ),
+            _bottomItemBuild(
+              condition: _selectedIndex == 1,
+              icon: const Icon(
+                Icons.android,
+              ),
+              onPressed: () {
+                _animateToPage(1);
+              },
+              iconColor: CupertinoColors.activeGreen,
+              name: 'Android',
+            ),
+            _bottomItemBuild(
+                condition: _selectedIndex == 2,
+                icon: const Icon(Icons.apple),
+                onPressed: () {
+                  _animateToPage(2);
+                },
+                name: 'Iphone'),
+            _bottomItemBuild(
+              condition: _selectedIndex == 3,
+              icon: const Icon(CupertinoIcons.person),
+              onPressed: () {
+                _animateToPage(3);
+              },
+              name: 'Profil',
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  _bottomItemBuild(
+      {required bool condition,
+      required Widget icon,
+      required void Function()? onPressed,
+      required String name,
+      Color iconColor = Colors.black}) {
+    var size = MediaQuery.of(context).size;
+    return AnimatedContainer(
+      padding: const EdgeInsets.all(2),
+      height: size.width / 20,
+      width: size.width / 4,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: condition ? Colors.lightBlue.shade400 : Colors.transparent),
+      duration: const Duration(milliseconds: 700),
+      child: ListView(
+        scrollDirection: Axis.horizontal,
         children: [
           IconButton(
-            icon: Icon(CupertinoIcons.chat_bubble_2),
-            onPressed: ()  =>_animateToPage(0)
+            icon: icon,
+            onPressed: onPressed,
+            color: condition ? Colors.white : iconColor,
           ),
-          IconButton(
-            icon: Icon(
-              Icons.android,
-              color: CupertinoColors.activeGreen,
-            ),
-            onPressed: ()  =>_animateToPage(1)
-          ),
-          IconButton(
-            icon: Icon(Icons.apple),
-            onPressed: ()  =>_animateToPage(2)
-          ),
-          IconButton(
-            icon: Icon(CupertinoIcons.person),
-            onPressed: () =>_animateToPage(3)
-          ),
+          condition
+              ? Center(
+                  child: Text(name,
+                      style: TextStyle(
+                          fontSize: size.width / 28,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold)),
+                )
+              : const SizedBox()
         ],
       ),
     );
@@ -107,4 +166,3 @@ class _MainPageState extends State<MainPage> {
     );
   }
 }
-

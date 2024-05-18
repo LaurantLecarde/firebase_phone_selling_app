@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../constants/colors.dart';
+import '../../../constants/themes/colors.dart';
 
 class ApplePage extends StatefulWidget {
   const ApplePage({super.key});

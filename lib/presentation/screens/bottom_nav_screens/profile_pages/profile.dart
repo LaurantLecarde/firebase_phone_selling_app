@@ -1,4 +1,4 @@
-import 'package:firebase_phone_selling_app/constants/colors.dart';
+import 'package:firebase_phone_selling_app/constants/themes/colors.dart';
 import 'package:firebase_phone_selling_app/constants/navigators.dart';
 import 'package:firebase_phone_selling_app/presentation/screens/bottom_nav_screens/profile_pages/update_profile.dart';import 'package:firebase_phone_selling_app/presentation/widgets/buttons.dart';
 import 'package:firebase_phone_selling_app/presentation/widgets/const_sizedbox.dart';
@@ -22,12 +22,6 @@ class _ProfileState extends State<Profile> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        leading: IconButton(
-          onPressed: () {
-            navPop(context);
-          },
-          icon: const Icon(CupertinoIcons.back),
-        ),
         backgroundColor: Colors.white,
         title: Text(
           "Profil",

@@ -1,4 +1,4 @@
-import 'package:firebase_phone_selling_app/constants/colors.dart';
+import 'package:firebase_phone_selling_app/constants/themes/colors.dart';
 import 'package:firebase_phone_selling_app/presentation/screens/auth_pages/login_pages/login.dart';
 import 'package:firebase_phone_selling_app/presentation/screens/auth_pages/register_pages/register.dart';
 import 'package:flutter/material.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../constants/colors.dart';
+import '../../../constants/themes/colors.dart';
 
 class GlobalChat extends StatefulWidget {
   const GlobalChat({super.key});
